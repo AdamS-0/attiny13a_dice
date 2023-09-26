@@ -20,17 +20,18 @@ ATTiny13A-PU (DIP8) was chosen as the uC, which provides 8 pins:
 - 6 GPIOs.
 
 To control seven LEDs as one six-sided dice, simply connect the four pins as shown below:
-C _ B
-D A D
-B _ C
+| C | _ | B |
+| D | A | D |
+| B | _ | C |
 
 where you can display further numbers by powering these sets of LEDs:
-1 - A
-2 - B
-3 - A and B
-4 - B and C
-5 - A, B and C
-6 - B, C and D
+| Number | LEDs to ON |
+| 1      | A          |
+| 2      | B          |
+| 3      | A and B    |
+| 4      | B and C    |
+| 5      | A, B and C |
+| 6      | B, C and D |
 
 ![Electrical connection diagram](imgs/attiny13_fair_die_scheme.jpg)
 Electrical connection diagram
@@ -50,8 +51,8 @@ At this time, raw readings cannot be used to randomly select a value from 1 to 6
 
 ## Equal distribution algorithm
 ATTiny13 should store "rolled" values as counts in an array like this:
-1 2 3 4 5 6
-0 0 0 0 0 0
+| 1 | 2 | 3 | 4 | 5 | 6 |
+| 0 | 0 | 0 | 0 | 0 | 0 |
 
 which can be done with the internal EEPROM.
 Two rows (numbers and frequency) and six columns (as a six-sided die).
