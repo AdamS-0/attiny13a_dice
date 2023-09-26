@@ -2,19 +2,19 @@
 
 
 
-#Motivation
+## Motivation
 There was a thought to create "a fair die" as ALAP project (as light as possible). Such designs typically use two switches - one as a power switch and the other as an external trigger to "roll the dice".
 
 This project solved the biggest drawback of "two-input cubes" - power consumption.
 
-##From the beginning
+## From the beginning
 When using PRNG (e.g. the 'random' function in Arduino IDE), such an algorithm is based on the uC operating time - the reason for using two switches, thanks to which the user has the ability to influence the output result.
 
-##Requirements
+## Requirements
 * Of course, the new design should only include one switch responsible for delivering power.
 * The second requirement is the number of pins used to display the state of the six-sided die.
 
-#Physical part
+# Physical part
 ATTiny13A-PU (DIP8) was chosen as the uC, which provides 8 pins:
 - 2 for power supply: GND and VCC;
 - 6 GPIOs.
@@ -37,7 +37,7 @@ Electrical connection diagram
 
 The device is powered by one CR2032 cell.
 
-#Logical part
+# Logical part
 There are basically two main sources of random seeds in ATTiny13A, seed:
 - based on time;
 - based on analog readings.
@@ -48,7 +48,7 @@ Unfortunately, it is highly impossible to obtain a square (or equal) distributio
 
 At this time, raw readings cannot be used to randomly select a value from 1 to 6. However, it is possible to equalize their probabilities.
 
-##Equal distribution algorithm
+## Equal distribution algorithm
 ATTiny13 should store "rolled" values as counts in an array like this:
 1 2 3 4 5 6
 0 0 0 0 0 0
@@ -65,6 +65,8 @@ Two rows (numbers and frequency) and six columns (as a six-sided die).
 6. The randomly selected value is displayed on the LEDs.
 
 
+[Simple example with 30 iterations](example.txt)
+
 The entire algorithm works in a closed loop, where the frequency of each number is feedback.
 Depending on the selected elements (1st, 3rd and 5th) from the main table, can be choose the least frequent number, e.g. from 1 to 3.
 Additionally, it is not possible to select the same most frequently occurring number all the time, so it is a system with negative feedback - a self-stabilizing system (stable system).
@@ -72,7 +74,6 @@ Additionally, it is not possible to select the same most frequently occurring nu
 If the weakest item (1st) is not selected or is still the least frequent, it will be moved to the next round until it is as common as the second least frequent number.
 
 It's not pure RNG, but this algorithm can provide fair (or equal) results.
-
 
 
 
