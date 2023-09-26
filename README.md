@@ -32,7 +32,7 @@ where you can display further numbers by powering these sets of LEDs:
 5 - A, B and C
 6 - B, C and D
 
-![Electrical connection diagram](imgs\attiny13_fair_die_scheme.jpg)
+![Electrical connection diagram](imgs/attiny13_fair_die_scheme.jpg)
 Electrical connection diagram
 
 The device is powered by one CR2032 cell.
