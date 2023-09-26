@@ -14,10 +14,10 @@
 // PB | 0 1 2 3
 //    | C D A B
 
+// analog input
 #define pAIn A0
 
 #include <EEPROM.h>
-//byte value;
 
 
 template<typename T>
@@ -70,7 +70,7 @@ void setup() {
     uiAIn += analogRead( pAIn );
   }
   
-  rndId = 2*(uint16_t)( uiAIn % 3 );
+  rndId = 2*(uint16_t)( uiAIn % 3 ); // uiAIn % 3 = {0, 1, 2} * 2 = {0, 2, 4}
   vDice = numbers[ rndId ]; // numbers = {0, 1, 2, 3, 4, 5}
   // vDice e <0, 5>
 
@@ -106,9 +106,6 @@ void loop() {
     }
   }
 }
-
-
-
 
 // BOD: Brown out detection, or BOD for short lets the microcontroller sense the input voltage and shut down if the voltage goes below the brown out setting
 // Clock can be changed to slower, which should reduce minimum voltage!!!
