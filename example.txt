@@ -1,5 +1,16 @@
 Example
 
+This file include output of 30 iterations of the algorithm.
+Each iteration contain:
+* Sorted table in ascending order (by second row);
+* selected three numbers, which can be choosen in this iteration;
+* random output from 0 to 2;
+* "rolled" number (from 1 to 6);
+* current state of table.
+
+The initial table state was randomized, as an proof that this algorithm is stable.
+Which was proven by calculating the standard deviation at the end of this example.
+
 
 Table:
  1  2  3  4  5  6
