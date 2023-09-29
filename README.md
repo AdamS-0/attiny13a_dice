@@ -80,5 +80,5 @@ If the weakest item (1st) is not selected or is still the least frequent, it wil
 It's not pure RNG, but this algorithm can provide fair (or equal) results.
 
 
-It is possible to clear table by pressing button for 10 seconds. As confirmation of this process all LEDs should light up.
+It is possible to clear table (set 0) by pressing button for 10 seconds. As confirmation of this process all LEDs should light up.
 
