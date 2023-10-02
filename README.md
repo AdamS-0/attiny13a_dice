@@ -64,9 +64,9 @@ Two rows (numbers and frequency) and six columns (as a six-sided die).
 2. The algorithm checks the 1st, 3rd and 5th elements of this table and saves them as a new 2x3-element array - a table of possible numbers.
 3. At this point the uC reads the analog pin and converts the result value as index "i" from 0 to 2,  where 0 indicates the first element of the new table.
 4. The final number is written to the new table in the ith position, which is the "rolled" value.
-5.1 The individual counter (stored in EEPROM) of the "rolled" value is incremented.
-5.2 Due to the maximum value of the counters (e.g. 255), it should be checked whether it is possible to exceed them. If so, all counters are decremented by the value of the least frequent number found in the second row.
-6. The randomly selected value is displayed on the LEDs.
+5. The individual counter (stored in EEPROM) of the "rolled" value is incremented.
+6. Due to the maximum value of the counters (e.g. 255), it should be checked whether it is possible to exceed them. If so, all counters are decremented by the value of the least frequent number found in the second row.
+7. The randomly selected value is displayed on the LEDs.
 
 
 [Simple example with 30 iterations](example.txt)
