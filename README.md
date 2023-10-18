@@ -38,6 +38,12 @@ where you can display further numbers by powering these sets of LEDs:
 ![Electrical connection diagram](imgs/attiny13_fair_die_scheme.jpg)
 Electrical connection diagram
 
+
+![PCB paths](imgs/PCB_attiny13a_dice_2023-08.svg)
+![Working circuit](imgs/img4.jpg)
+
+
+
 The device is powered by one CR2032 cell.
 
 # Logical part
